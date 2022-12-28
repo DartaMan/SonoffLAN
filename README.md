@@ -394,33 +394,36 @@ You can use any `device_class` that is supported in [Binary Sensor](https://www.
 
 ```yaml
 sonoff:
-  rfbridge:
-    PIR Sensor 1:  # button/alarm name in eWeLink application
-      device_class: motion
-      timeout: 60  # optional (default 120), timeout in seconds for auto turn off
+  devices:
+    rfbridge:
+      PIR Sensor 1:  # button/alarm name in eWeLink application
+        device_class: motion
+        timeout: 60  # optional (default 120), timeout in seconds for auto turn off
 ```
 
 **Single State Sensor**
 
 ```yaml
 sonoff:
-  rfbridge:
-    Door Sensor 1:  # button/alarm name in eWeLink application
-      name: Door Sensor  # optional, you can change sensor name
-      device_class: door  # e.g. door, window
-      timeout: 5
+  devices:
+    rfbridge:
+      Door Sensor 1:  # button/alarm name in eWeLink application
+        name: Door Sensor  # optional, you can change sensor name
+        device_class: door  # e.g. door, window
+        timeout: 5
 ```
 
 **Dual State Sensor**
 
 ```yaml
 sonoff:
-  rfbridge:
-    Sensor1:  # button/alarm name in eWeLink application (open signal)
-      name: Window Sensor  # optional, you can change sensor name
-      device_class: window  # e.g. door, window
-      timeout: 0  # disable auto close timeout
-      payload_off: Sensor2  # button/alarm name in eWeLink application (close signal)
+  devices:
+    rfbridge:
+      Sensor1:  # button/alarm name in eWeLink application (open signal)
+        name: Window Sensor  # optional, you can change sensor name
+        device_class: window  # e.g. door, window
+        timeout: 0  # disable auto close timeout
+        payload_off: Sensor2  # button/alarm name in eWeLink application (close signal)
 ```
 
 You can read more about using this bridge in [wiki](https://github.com/AlexxIT/SonoffLAN/wiki/RF-Bridge).
